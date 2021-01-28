@@ -19,7 +19,6 @@ function makeGallery(event) {
     getPictures(getUrl(input, querryObj.pageNumber)).then(({ hits }) => {
         makeTemplate(hits)
 
-        querryObj.pageNumber += 1
         makeIntersectionObserver(input)
     })
 

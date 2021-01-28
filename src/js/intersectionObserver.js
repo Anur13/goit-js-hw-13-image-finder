@@ -5,8 +5,6 @@ import getUrl from "../utils/getUrl"
 const getPictures = querryObj.getPictures
 
 export default function makeIntersectionObserver(input) {
-    // console.log(querryObj.pageNumber)
-
     let options = {
         threshold: 0,
     }
@@ -14,8 +12,6 @@ export default function makeIntersectionObserver(input) {
     function callback() {
         getPictures(getUrl(input, querryObj.pageNumber)).then(({ hits }) => {
             makeTemplate(hits)
-
-            querryObj.pageNumber += 1
         })
     }
     let target = document.querySelector(".observer")
